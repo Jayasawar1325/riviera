@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reviera</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes hoverAnimation {
+            from {
+              transform: translateY(0);
+            }
+            to {
+              transform: translateY(-10px);
+            }
+          }
+          .hover-card:hover {
+            animation: hoverAnimation 0.3s forwards;
+          }
+          .hover-notice:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease-in-out;
+          }
+        @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+        </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="bg-gray-100 text-gray-900 font-inter overflow-x-hidden">
+    <nav class="bg-white shadow-md py-3 hidden lg:block">
+        <div class="container mx-auto px-4 py-2 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <a href="#"><img src="assets/logo.png" alt="Riviera" class="h-10 mr-2 hidden lg:block">
+                </a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <a href="#" class="text-gray-700 hover:text-gray-900 text-sm px-3 py-3 bg-[#97C33C] rounded-md border-none font-medium">APPLY NOW</a>
+            </div>
+        </div>
+    </nav>
+<!-- Navbar -->
+<nav class="lg:bg-[#00175D] bg-white shadow-md p-5 z-10 sticky top-0">
+    <div class="container mx-auto flex justify-between lg:justify-center items-center">
+        <a href="#" class="text-xl font-bold text-blue-600 ">
+            <img src="assets/logo.png" alt="Riviera" class="h-8 inline-block mr-2 lg:hidden">
+        </a>
+        
+        <ul class="hidden lg:flex space-x-6 items-center text-white">
+            <li><a href="#" class="hover:text-blue-600">HOME</a></li>
+            <li class="relative group">
+                <a href="#" class="hover:text-blue-600">ABOUT US</a>
+                <ul class="absolute left-0 top-full bg-[#41448B] shadow-md w-48 hidden group-hover:block">
+                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-500">Introduction</a></li>
+                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-500">Vision & Mission</a></li>
+                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-500">Location & Atmosphere</a></li>
+                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-500">Network & Expectation</a></li>
+                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-500">Educational Setting</a></li>
+                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-500">Our Achievement</a></li>
+                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-500">From the Desk of the Principal</a></li>
+                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-500">Board of Directors</a></li>
+                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-500">Our Teachers & Staff</a></li>
+                </ul>
+            </li>
+            <li class="relative group">
+                <a href="#" class="hover:text-blue-600">ACADEMICS</a>
+                <ul class="absolute left-0 top-full bg-[#41448B] shadow-md w-48 hidden group-hover:block">
+                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-500">Curriculum</a></li>
+                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-500">Subjects</a></li>
+                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-500">Exams & Results</a></li>
+                </ul>
+            </li>
+            <li><a href="#" class="hover:text-blue-600">SPECIALS</a></li>
+            <li><a href="#" class="hover:text-blue-600">RIVIERA SOME GLIMPSES</a></li>
+            <li><a href="#" class="hover:text-blue-600">DOWNLOADS</a></li>
+            <li><a href="#" class="hover:text-blue-600">NEWS & EVENTS</a></li>
+            <li><a href="#" class="hover:text-blue-600">GALLERY</a></li>
+            <li><a href="#" class="hover:text-blue-600">CONTACTUS</a></li>
+        </ul>
+
+        <!-- Hamburger Icon -->
+        <button id="hamburger-icon" class="lg:hidden text-black  focus:outline-none">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+        </button>
+    </div>
+</nav>
+
+<!-- Mobile Navigation Menu -->
+<div id="mobile-nav" class="lg:hidden bg-white shadow-md hidden">
+    <ul class="py-4">
+        <li><a href="#" class="block py-2 px-4 hover:bg-gray-100">Home</a></li>
+        <li class="relative">
+            <button class="mobile-dropdown-toggle w-full text-left py-2 px-4 hover:bg-gray-100 flex justify-between items-center">
+                About Us
+                <svg class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+            </button>
+            <ul class="bg-gray-50 hidden py-2">
+                <li><a href="#" class="block py-2 px-8 hover:bg-gray-100">Introduction</a></li>
+                <li><a href="#" class="block py-2 px-8 hover:bg-gray-100">Vision & Mission</a></li>
+                <li><a href="#" class="block py-2 px-8 hover:bg-gray-100">Location & Atmosphere</a></li>
+                <li><a href="#" class="block py-2 px-8 hover:bg-gray-100">Network & Expectation</a></li>
+                <li><a href="#" class="block py-2 px-8 hover:bg-gray-100">Educational Setting</a></li>
+                <li><a href="#" class="block py-2 px-8 hover:bg-gray-100">Our Achievement</a></li>
+                <li><a href="#" class="block py-2 px-8 hover:bg-gray-100">From the Desk of the Principal</a></li>
+                <li><a href="#" class="block py-2 px-8 hover:bg-gray-100">Board of Directors</a></li>
+                <li><a href="#" class="block py-2 px-8 hover:bg-gray-100">Our Teachers & Staff</a></li>
+            </ul>
+        </li>
+        <li class="relative">
+            <button class="mobile-dropdown-toggle w-full text-left py-2 px-4 hover:bg-gray-100 flex justify-between items-center">
+                Academics
+                <svg class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+            </button>
+            <ul class="bg-gray-50 hidden py-2">
+                <li><a href="#" class="block py-2 px-8 hover:bg-gray-100">Curriculum</a></li>
+                <li><a href="#" class="block py-2 px-8 hover:bg-gray-100">Subjects</a></li>
+                <li><a href="#" class="block py-2 px-8 hover:bg-gray-100">Exams & Results</a></li>
+            </ul>
+        </li>
+        <li><a href="#" class="block py-2 px-4 hover:bg-gray-100">Specials</a></li>
+        <li><a href="#" class="block py-2 px-4 hover:bg-gray-100">Riviera Some Glimpses</a></li>
+        <li><a href="#" class="block py-2 px-4 hover:bg-gray-100">Downloads</a></li>
+        <li><a href="#" class="block py-2 px-4 hover:bg-gray-100">News & Events</a></li>
+        <li><a href="#" class="block py-2 px-4 hover:bg-gray-100">Gallery</a></li>
+        <li><a href="#" class="block py-2 px-4 hover:bg-gray-100">Contact Us</a></li>
+    </ul>
+</div>
+<div class="w-full mx-auto">
+    <video autoplay loop muted class="rounded-b-lg w-full lg:h-screen h-[50vh] object-cover">
+      <source src="assets/coll_vid.mp4" type="video/mp4">
+    </video>
+  </div> 
+
+
+  <!--About Us-->
+  <section class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <!-- Left Section (Text) -->
+      <div>
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900">About Us</h2>
+        <p class="mt-4 text-base sm:text-lg text-gray-600">
+            Riviera International Academy is an educational institution where an optimal and safe learning environment exists for children. Riviera is the school you are looking for where the children take intellectual adventures, where they take a chance to stretch their mind, where academics include books and much more, where they make friends that last a lifetime, where learning happens all the time and where learning is fun. Riviera develops the confident and resourceful individuals...</p>
+        <a href="#" class="inline-block mt-6 bg-purple-600 text-white px-6 py-2 rounded hover:bg-purple-700">Read More</a>
+      </div>
+
+      <!-- Right Section (Images) -->
+      <div class="flex justify-center lg:justify-end">
+        <div class="space-y-4 w-full max-w-sm">
+         <img src="" alt="aboutus">
+        </div>
+      </div>
+    </div>
+  </section>
+
+   <!-- Academics -->
+ <div class="container mx-auto px-4 py-12">
+    <h1 class="text-3xl font-bold text-center mb-10">Academics</h1>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      
+      <!-- Card 1 -->
+      <div class="bg-white shadow-lg rounded-lg p-6 hover:shadow-2xl transition-shadow duration-300 hover-card">
+        <img src="https://example.com/image1.jpg" alt="Course 1" class="w-full h-48 object-cover rounded-t-lg">
+        <div class="mt-4 flex flex-col items-start justify-center">
+          <h2 class="text-xl font-semibold">Riviera Kindergarden</h2>
+          <p class="text-gray-600 mt-2">Learn the foundations of Computer Science.</p>
+          <a href="#" class="text-indigo-600 mt-4 inline-block">Read More &gt;</a>
+        </div>
+      </div>
+      
+      <!-- Card 2 -->
+      <div class="bg-white shadow-lg rounded-lg p-6 hover:shadow-2xl transition-shadow duration-300 hover-card">
+        <img src="https://example.com/image2.jpg" alt="Course 2" class="w-full h-48 object-cover rounded-t-lg">
+        <div class="mt-4 flex flex-col items-start justify-center">
+          <h2 class="text-xl font-semibold">Riviera Basic School Education(BaSCE)</h2>
+          <p class="text-gray-600 mt-2">Specialize in Cyber Security and Forensics.</p>
+          <a href="#" class="text-indigo-600 mt-4 inline-block">Read More &gt;</a>
+        </div>
+      </div>
+      
+      <!-- Card 3 -->
+      <div class="bg-white shadow-lg rounded-lg p-6 hover:shadow-2xl transition-shadow duration-300 hover-card">
+        <img src="https://example.com/image3.jpg" alt="Course 3" class="w-full h-48 object-cover rounded-t-lg">
+        <div class="mt-4 flex flex-col items-start justify-center">
+          <h2 class="text-xl font-semibold">Riviera Secondary School</h2>
+          <p class="text-gray-600 mt-2">Prepare for your university journey.</p>
+          <a href="#" class="text-indigo-600 mt-4 inline-block">Read More &gt;</a>
+        </div>
+      </div>
+      
+      <!-- Card 4 -->
+      <div class="bg-white shadow-lg rounded-lg p-6 hover:shadow-2xl transition-shadow duration-300 hover-card">
+        <img src="https://example.com/image4.jpg" alt="Course 4" class="w-full h-48 object-cover rounded-t-lg">
+        <div class="mt-4 flex flex-col items-start justify-center">
+          <h2 class="text-xl font-semibold">Riviera plus 2</h2>
+          <p class="text-gray-600 mt-2">Details of the new course offering.</p>
+          <a href="#" class="text-indigo-600 mt-4 inline-block">Read More &gt;</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+ 
+
+ 
+    <!--Notice-->
+    <div class="container mx-auto px-4 py-12">
+        <h1 class="text-3xl font-bold text-center mb-10">Notice Board</h1>
+    
+        <!-- Notice Board Section -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    
+          <!-- Notice 1 -->
+          <div class="bg-white shadow-lg rounded-lg p-6 hover-notice transition-transform duration-300">
+            <h2 class="text-xl font-semibold text-indigo-700">Important Exam Schedule</h2>
+            <p class="text-gray-500 text-sm mt-2">Date: September 30, 2024</p>
+            <p class="text-gray-600 mt-4">The exam schedule for the final semester has been released. Check the detailed timetable for more information.</p>
+            <a href="#" class="text-indigo-600 font-semibold mt-4 inline-block">Read More &gt;</a>
+          </div>
+    
+          <!-- Notice 2 -->
+          <div class="bg-white shadow-lg rounded-lg p-6 hover-notice transition-transform duration-300">
+            <h2 class="text-xl font-semibold text-indigo-700">Holiday Notice</h2>
+            <p class="text-gray-500 text-sm mt-2">Date: October 1, 2024</p>
+            <p class="text-gray-600 mt-4">The university will remain closed on October 2, 2024, for a public holiday. Classes will resume on October 3.</p>
+            <a href="#" class="text-indigo-600 font-semibold mt-4 inline-block">Read More &gt;</a>
+          </div>
+    
+          <!-- Notice 3 -->
+          <div class="bg-white shadow-lg rounded-lg p-6 hover-notice transition-transform duration-300">
+            <h2 class="text-xl font-semibold text-indigo-700">Workshop on AI</h2>
+            <p class="text-gray-500 text-sm mt-2">Date: October 5, 2024</p>
+            <p class="text-gray-600 mt-4">A workshop on Artificial Intelligence will be conducted for final-year students. Registration details are available below.</p>
+            <a href="#" class="text-indigo-600 font-semibold mt-4 inline-block">Read More &gt;</a>
+          </div>
+                <!-- Notice 1 -->
+                <div class="bg-white shadow-lg rounded-lg p-6 hover-notice transition-transform duration-300">
+                    <h2 class="text-xl font-semibold text-indigo-700">Important Exam Schedule</h2>
+                    <p class="text-gray-500 text-sm mt-2">Date: September 30, 2024</p>
+                    <p class="text-gray-600 mt-4">The exam schedule for the final semester has been released. Check the detailed timetable for more information.</p>
+                    <a href="#" class="text-indigo-600 font-semibold mt-4 inline-block">Read More &gt;</a>
+                  </div>
+            
+                  <!-- Notice 2 -->
+                  <div class="bg-white shadow-lg rounded-lg p-6 hover-notice transition-transform duration-300">
+                    <h2 class="text-xl font-semibold text-indigo-700">Holiday Notice</h2>
+                    <p class="text-gray-500 text-sm mt-2">Date: October 1, 2024</p>
+                    <p class="text-gray-600 mt-4">The university will remain closed on October 2, 2024, for a public holiday. Classes will resume on October 3.</p>
+                    <a href="#" class="text-indigo-600 font-semibold mt-4 inline-block">Read More &gt;</a>
+                  </div>
+            
+                  <!-- Notice 3 -->
+                  <div class="bg-white shadow-lg rounded-lg p-6 hover-notice transition-transform duration-300">
+                    <h2 class="text-xl font-semibold text-indigo-700">Workshop on AI</h2>
+                    <p class="text-gray-500 text-sm mt-2">Date: October 5, 2024</p>
+                    <p class="text-gray-600 mt-4">A workshop on Artificial Intelligence will be conducted for final-year students. Registration details are available below.</p>
+                    <a href="#" class="text-indigo-600 font-semibold mt-4 inline-block">Read More &gt;</a>
+                  </div>
+    
+          <!-- Add more notices as needed -->
+    
+        </div>
+      </div>
+
+
+
+   <!--ContactUs Form-->
+   <section class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+    <div class="text-center">
+      <h1 class="text-4xl font-bold text-green-600">Get in touch</h1>
+      <p class="mt-4 text-gray-600">Have an enquiry or some feedback for us? Fill out the form below to contact our team.</p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-12">
+      <!-- Form Section -->
+      <div class="bg-white p-8 rounded-lg shadow-lg">
+        <form action="#" method="POST" class="space-y-6">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div>
+              <label for="first-name" class="block text-sm font-medium text-gray-700">First Name</label>
+              <input type="text" name="first-name" id="first-name" placeholder="First Name" class="mt-2 p-3 block w-full border rounded-md bg-gray-100 border-gray-300 focus:ring-green-500 focus:border-green-500">
+            </div>
+            <div>
+              <label for="last-name" class="block text-sm font-medium text-gray-700">Last Name</label>
+              <input type="text" name="last-name" id="last-name" placeholder="Last Name" class="mt-2 p-3 block w-full border rounded-md bg-gray-100 border-gray-300 focus:ring-green-500 focus:border-green-500">
+            </div>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div>
+              <label for="email" class="block text-sm font-medium text-gray-700">Email Address</label>
+              <input type="email" name="email" id="email" placeholder="Email Address" class="mt-2 p-3 block w-full border rounded-md bg-gray-100 border-gray-300 focus:ring-green-500 focus:border-green-500">
+            </div>
+            <div>
+              <label for="phone" class="block text-sm font-medium text-gray-700">Phone Number</label>
+              <input type="text" name="phone" id="phone" placeholder="Phone Number" class="mt-2 p-3 block w-full border rounded-md bg-gray-100 border-gray-300 focus:ring-green-500 focus:border-green-500">
+            </div>
+          </div>
+          <div>
+            <label for="queries" class="block text-sm font-medium text-gray-700">Queries</label>
+            <textarea id="queries" name="queries" placeholder="Enter your queries" rows="4" class="mt-2 p-3 block w-full border rounded-md bg-gray-100 border-gray-300 focus:ring-green-500 focus:border-green-500"></textarea>
+          </div>
+          <div>
+            <button type="submit" class="w-full bg-[#00175D] text-white py-3 px-4 rounded-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">Submit</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Contact Info and Map Section -->
+      <div class="space-y-8">
+        <div>
+          <h3 class="text-lg font-semibold text-gray-800">Prefer another way to find us?</h3>
+          <p class="mt-4 text-gray-600"
+              <span class="block"><strong>Mobile:</strong> +977 9801022637</span>
+            <span class="block"><strong>Phone:</strong> +977 9801022637</span>
+            <span class="block mt-2"><strong>Email:</strong> info@riviera.edu.np</span>
+            <span class="block mt-2"><strong>Web:</strong>www.riviera.edu.np</span>
+
+          </p>
+        </div>
+        <div class="relative w-full h-0 pb-[56.25%]">
+            <!-- Embedded Google Map -->
+            <iframe
+                class="absolute top-0 left-0 w-full h-full rounded-lg"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d17770.329123012867!2d85.32679940167411!3d27.717567810516147!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb197d350e76a5%3A0xac253f40ed18e8b1!2sMaijubahal%2C%20Kathmandu%2044600!5e1!3m2!1sen!2snp!4v1727600392132!5m2!1sen!2snp"
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+<!--Next Step-->
+<section class="relative bg-cover bg-center h-[300px] mb-8" style="background-image: url('assets/photo.jpg');">
+  <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+  <div class="absolute inset-0 flex flex-col items-center justify-center text-white">
+      <h1 class="text-4xl md:text-6xl font-bold">SECURE YOUR <span class="text-[#41448A]">FUTURE</span></h1>
+      <div class="mt-8 space-x-4">
+          <a href="#" class="px-8 py-3 border border-white text-white hover:bg-white hover:text-black transition duration-300">CONTACT US</a>
+          <a href="#" class="px-8 py-3 bg-indigo-500 hover:bg-indigo-600 transition duration-300">APPLY NOW</a>
+      </div>
+  </div>
+</section>
+<!-- Foooter -->
+<section class="bg-[#B01E1B] text-white">
+    <div class="max-w-screen-xl px-4 py-12 mx-auto space-y-8 overflow-hidden sm:px-6 lg:px-8">
+        <nav class="flex flex-wrap justify-center -mx-5 -my-2">
+            <div class="px-5 py-2">
+                <a href="#" class="text-base leading-6">
+                    About
+                </a>
+            </div>
+            <div class="px-5 py-2">
+                <a href="#" class="text-base leading-6 ">
+                    Gallery
+                </a>
+            </div>
+            <div class="px-5 py-2">
+                <a href="#" class="text-base leading-6 ">
+                    Our Teams
+                </a>
+            </div>
+            <div class="px-5 py-2">
+                <a href="#" class="text-base leading-6 ">
+                    News & Evnets
+                </a>
+            </div>
+            <div class="px-5 py-2">
+                <a href="#" class="text-base leading-6 ">
+                    Contact
+                </a>
+            </div>
+            <div class="px-5 py-2">
+                <a href="#" class="text-base leading-6 ">
+                    FAQs
+                </a>
+            </div>
+        </nav>
+        <div class="flex justify-center mt-8 space-x-6">
+            <a href="#" class="">
+                <span class="sr-only">Facebook</span>
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="">
+                <span class="sr-only">Instagram</span>
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="">
+                <span class="sr-only">Twitter</span>
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="">
+                <span class="sr-only">GitHub</span>
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="#" class="">
+                <span class="sr-only">Dribbble</span>
+                <i class="fab fa-youtube"></i>
+            </a>
+        </div>
+        
+        <p class="mt-8 text-base leading-6 text-center">
+            © 2024 Riviera.edu.np, Inc. All rights reserved.
+        </p>
+    </div>
+</section>
+
+
+<script>
+// Hamburger menu toggle for mobile
+const hamburgerIcon = document.getElementById('hamburger-icon');
+const mobileNav = document.getElementById('mobile-nav');
+
+hamburgerIcon.addEventListener('click', function() {
+    mobileNav.classList.toggle('hidden');
+});
+
+// Mobile dropdown toggles
+document.querySelectorAll('.mobile-dropdown-toggle').forEach(function(toggle) {
+  toggle.addEventListener('click', function() {
+      const dropdownContent = this.nextElementSibling;
+      const arrow = this.querySelector('svg');
+      dropdownContent.classList.toggle('hidden');
+      arrow.classList.toggle('rotate-180');
+  });
+});
+
+</script>
+
+</body>
+</html>
